@@ -84,6 +84,20 @@
 
             int age = Convert.ToInt32(name); */
 
+            int DoOperation1(int x)
+
+            {
+                int result = x switch
+                {
+                    1 => 1,
+                    2 => 2,
+                    _=> 0
+                };
+                return result;
+
+            }
+
+
         }
 
         /*string name = "Bot";
