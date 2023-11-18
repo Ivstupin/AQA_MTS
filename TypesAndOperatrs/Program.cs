@@ -389,7 +389,7 @@ else
 //Задание 3
 
 
- Console.WriteLine ("Введите cлово о погоде на русском языке: ");
+Console.WriteLine ("Введите cлово о погоде на русском языке: ");
 string weatherWord = Console.ReadLine();
 
 
