@@ -300,183 +300,216 @@ int DoOperation2(int x) => x switch
 
 //Задание 1
 
- Console.WriteLine ("Введите число номер 1: ");
-int valueNumberOne = Convert.ToInt32(Console.ReadLine());
+//Задание 1
+//while (true)
+//{
+//    Console.Clear();
+//    try
+//    {
+//        Console.WriteLine("Введите число номер 1: ");
+//        double valueNumberOne = Convert.ToDouble(Console.ReadLine());
+
+//        Console.WriteLine("Введите допустимую операцию +, -, *, /: ");
+//        string math_Operation = Console.ReadLine();
+
+//        Console.WriteLine("Введите число номер 2: ");
+//        double valueNumberTwo = Convert.ToDouble(Console.ReadLine());
+
+//        switch (math_Operation)
+//        {
+//            case "+":
+//                double resultPlus = valueNumberOne + valueNumberTwo;
+//                Console.WriteLine($"Результат выбранной операции: {resultPlus}");
+//                break;
+
+//            case "-":
+//                double resultMinus = valueNumberOne - valueNumberTwo;
+//                Console.WriteLine($"Результат выбранной операции: {resultMinus}");
+//                break;
+
+//            case "*":
+//                double resultMultiplication = valueNumberOne * valueNumberTwo;
+//                Console.WriteLine($"Результат выбранной операции: {resultMultiplication}");
+//                break;
+//            case "/":
+//                if (valueNumberTwo == 0)
+//                {
+//                    Console.WriteLine("Нельзя делить на ноль");
+//                    break;
+//                }
+//                else
+//                {
+//                    double resultDivision = valueNumberOne / valueNumberTwo;
+//                    Console.WriteLine($"Результат выбранной операции: {resultDivision}");
+//                    break;
+//                }
 
 
-Console.WriteLine("Введите допустимую операцию +, -, *, /: ");
-string math_Operation = Console.ReadLine();
-
-Console.WriteLine("Введите число номер 2: ");
-int valueNumberTwo = Convert.ToInt32(Console.ReadLine());
-
-if (valueNumberTwo == 0 && math_Operation == "/")
-    { 
-      Console.WriteLine("Нельзя делить на ноль");
-    }
+//            default:
+//                Console.WriteLine("Введённый символ математической операции не соответствует допустимым условиям ввода +, -, *, /");
+//                break;
 
 
+//        }
 
-switch (math_Operation)
-{
-    case "+":
-        int resultPlus = valueNumberOne + valueNumberTwo;
-        Console.WriteLine($"Результат выбранной операции: {resultPlus}");
-        break;
-
-    case "-":
-        int resultMinus = valueNumberOne - valueNumberTwo;
-        Console.WriteLine($"Результат выбранной операции: {resultMinus}");
-        break;
-
-    case "*":
-        int resultMultiplication = valueNumberOne * valueNumberTwo;
-        Console.WriteLine($"Результат выбранной операции: {resultMultiplication}");
-        break;
-    case "/":
-        int resultDivision = valueNumberOne / valueNumberTwo;
-        Console.WriteLine($"Результат выбранной операции: {resultDivision}");
-        break;
-   
-    default:
-        Console.WriteLine("Введённый символ математической операции не соответствует допустимым условиям ввода +, -, *, /");
-        
-        break;
-
-        
-}
-
-//Задание 2
-
-
-
-Console.WriteLine("Введите число номер (от -50 до 50) : ");
-int userValue = Convert.ToInt32(Console.ReadLine());
-
-if (userValue >= -40 && userValue <= -10)
-
-{
-    Console.WriteLine("Вы попали в диапазон [-40, -10] ");
-}
-
-
-else if (userValue >= -9 && userValue <= 0)
-
-{
-    Console.WriteLine("Вы попали в диапазон [-9, 0]] ");
-
-}
-
-else if (userValue >= 1 && userValue <= 10)
-
-{
-    Console.WriteLine("Вы попали в диапазон [1, 10]] ");
-}
-
-else if (userValue >= 11 && userValue <= 40)
-
-{
-    Console.WriteLine("Вы попали в диапазон [11, 40]] ");
-
-}
-
-else
-{
-    Console.WriteLine("Вы не попали ни в один из диапазонов [-40, -10] [-9, 0] [1, 10] [11, 40]");
-}
-
-
-//Задание 3
-
-
-Console.WriteLine ("Введите cлово о погоде на русском языке: ");
-string weatherWord = Console.ReadLine();
+//    }
+//    catch (Exception)
+//    {
+//        Console.WriteLine("Для ввода доступны только числа");
+//    }
+//    Console.ReadLine();
+//}
 
 
 
-switch (weatherWord)
-{
-    case "холодно":
 
-        Console.WriteLine("сold");
-        break;
 
-    case "тепло":
 
-        Console.WriteLine("warm");
-        break;
-    
-    case "прохладно":
+//            //Задание 2
 
-        Console.WriteLine("cool");
-        break;
-    
-    case "морозно":
+//while (true)
+//{
+//    Console.Clear();
+//    try
+//    {
+//        Console.WriteLine("Введите число от -50 до 50: ");
+//        int userValue = Convert.ToInt32(Console.ReadLine());
+//        if (userValue < -50 || userValue > 50)
 
-        Console.WriteLine("frosty");
-        break;
+//        {
+//            Console.WriteLine("Для ввода доступны только цифры из диапазона от -50 до 50");
+//        }
 
-    case "солнечно":
+//        else if (userValue >= -40 && userValue <= -10)
 
-        Console.WriteLine("sunny");
-        break;
+//        {
+//            Console.WriteLine("Вы попали в диапазон [-40, -10] ");
+//        }
 
-    case "ясно":
 
-        Console.WriteLine("clear");
-        break;
+//        else if (userValue >= -9 && userValue <= 0)
 
-    case "душно":
+//        {
+//            Console.WriteLine("Вы попали в диапазон [-9, 0]] ");
 
-        Console.WriteLine("staffy");
-        break;
+//        }
 
-    case "облачно":
+//        else if (userValue >= 1 && userValue <= 10)
 
-        Console.WriteLine("cloudy");
-        break;
+//        {
+//            Console.WriteLine("Вы попали в диапазон [1, 10]] ");
+//        }
 
-    case "ветрено":
+//        else if (userValue >= 11 && userValue <= 40)
 
-        Console.WriteLine("windy");
-        break;
+//        {
+//            Console.WriteLine("Вы попали в диапазон [11, 40]] ");
 
-    case "сухо":
+//        }
 
-        Console.WriteLine("dry");
-        break;
-    default:
-        Console.WriteLine("Такого слова нет");
-        break;
-}
-        
+//        else
+//        {
+//            Console.WriteLine("Вы не попали ни в один из диапазонов [-40, -10] [-9, 0] [1, 10] [11, 40]");
+//        }
+//    }
+//    catch (Exception)
+//    {
+//        Console.WriteLine("Для ввода доступны только целые числа");
+//    }
+//    Console.ReadLine();
+//}
+
+
+
+////Задание 3
+
+
+//Console.WriteLine("Введите cлово о погоде на русском языке: ");
+//string weatherWord = Console.ReadLine();
+
+//switch (weatherWord)
+//{
+//    case "холодно":
+
+//        Console.WriteLine("сold");
+//        break;
+
+//    case "тепло":
+
+//        Console.WriteLine("warm");
+//        break;
+
+//    case "прохладно":
+
+//        Console.WriteLine("cool");
+//        break;
+
+//    case "морозно":
+
+//        Console.WriteLine("frosty");
+//        break;
+
+//    case "солнечно":
+
+//        Console.WriteLine("sunny");
+//        break;
+
+//    case "ясно":
+
+//        Console.WriteLine("clear");
+//        break;
+
+//    case "душно":
+
+//        Console.WriteLine("staffy");
+//        break;
+
+//    case "облачно":
+
+//        Console.WriteLine("cloudy");
+//        break;
+
+//    case "ветрено":
+
+//        Console.WriteLine("windy");
+//        break;
+
+//    case "сухо":
+
+//        Console.WriteLine("dry");
+//        break;
+//    default:
+//        Console.WriteLine("Такого слова нет");
+//        break;
+//}
+
 
 //Задание 4
 
 
- //Вариант1
+//Вариант1
 
-Console.WriteLine("Введите число: ");
+//Console.WriteLine("Введите число: ");
 
-int evenOrNot = Convert.ToInt32(Console.ReadLine());
+//int evenOrNot = Convert.ToInt32(Console.ReadLine());
 
-if (evenOrNot % 2 == 0) 
-{
-    Console.WriteLine($"Введённое число {evenOrNot} чётное");
-}
-else
-    Console.WriteLine($"Введённое число {evenOrNot} нечётное");
+//if (evenOrNot % 2 == 0)
+//{
+//    Console.WriteLine($"Введённое число {evenOrNot} чётное");
+//}
+//else
+//    Console.WriteLine($"Введённое число {evenOrNot} нечётное");
 
 
- //Вариант2
- 
-Console.WriteLine("Введите число: ");
+//Вариант2
 
-int evenOrNote = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine("Введите число: ");
 
-if (evenOrNote % 2 != 0)
-{
-    Console.WriteLine($"Введённое число {evenOrNote} нечётное");
-}
-else
-    Console.WriteLine($"Введённое число {evenOrNote} чётное");
+//int evenOrNote = Convert.ToInt32(Console.ReadLine());
+
+//if (evenOrNote % 2 != 0)
+//{
+//    Console.WriteLine($"Введённое число {evenOrNote} нечётное");
+//}
+//else
+//    Console.WriteLine($"Введённое число {evenOrNote} чётное");
