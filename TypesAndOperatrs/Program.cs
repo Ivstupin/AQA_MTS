@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿ // See https://aka.ms/new-console-template for more information
 
 {
     // Это сообщение будет выведено на экран
@@ -131,22 +131,7 @@
     }
     */
 
-    int x = 10;
-    int y = 20;
-    int z;
-
-    if (x < y)
-    {
-        z = x + y;
-    }
-    else
-    {
-        z = x - y;
-    }
-
-    z = x < y ? x + y : x - y;
-
-
+    
     /*
     // Решение нашей задачи
     // Подготовка данных
@@ -196,4 +181,22 @@
         Console.WriteLine("Сумма не может быть меньше 0");
     }
     */
+}
+int[] array = new int[5] { 1, 2, 3, 4, 5};
+Console.WriteLine("Length: " + array.Length);                       // количество всех элементов
+Console.WriteLine("Rank: " + array.Rank);                           // ранк массива
+Console.WriteLine("GetLength(0): " + array.GetLength(0));           // количество строк
+Console.WriteLine("GetUpperBound(0): " + array.GetUpperBound(0));   // Верхний индекс строк
+Console.WriteLine(array[array.Length-1]);
+Console.WriteLine(array[array.GetUpperBound(0)]);
+
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    Console.Write($"{array[i]}");
+    
+}
+Console.WriteLine();
+for (int i = 0; i < array.GetUpperBound(0); i++)
+{
+    Console.Write($"{array[i]}");
 }
