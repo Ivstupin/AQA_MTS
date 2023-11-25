@@ -7,7 +7,7 @@ namespace StringApp // Note: actual namespace depends on the project name.
 {
     static class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
 
         {
             string input = "Hello, 123!";
