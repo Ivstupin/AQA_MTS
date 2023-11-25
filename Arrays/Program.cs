@@ -211,40 +211,40 @@ for (int i = 0; i <= numbers.GetUpperBound(0); i++)
 */
 
 
-//================Задача
-int[] nums = { -4, 8, 10, 2, 12, 0, 5, 6 };
+////================Задача
+//int[] nums = { -4, 8, 10, 2, 12, 0, 5, 6 };
 
-foreach (int item in nums)
-{
-    Console.Write($"{item} \t");
-}
-Console.WriteLine();
-/*
-nums[0] <-> nums[nums.Length - 1 - 0]
-nums[1] <-> nums[nums.Length - 1 - 1]
-nums[2] <-> nums[nums.Length - 1 - 2]
-*/
+//foreach (int item in nums)
+//{
+//    Console.Write($"{item} \t");
+//}
+//Console.WriteLine();
+///*
+//nums[0] <-> nums[nums.Length - 1 - 0]
+//nums[1] <-> nums[nums.Length - 1 - 1]
+//nums[2] <-> nums[nums.Length - 1 - 2]
+//*/
 
-int n = nums.Length; // Длинна массива
-int k = n / 2;
-int tmp;
+//int n = nums.Length; // Длинна массива
+//int k = n / 2;
+//int tmp;
 
-for (int i = 0; i < k; i++)
-{
-    tmp = nums[i];
-    nums[i] = nums[n - 1 - i];
-    nums[n - 1 - i] = tmp;
-}
+//for (int i = 0; i < k; i++)
+//{
+//    tmp = nums[i];
+//    nums[i] = nums[n - 1 - i];
+//    nums[n - 1 - i] = tmp;
+//}
 
-foreach (int item in nums)
-{
-    Console.Write($"{item} \t");
-}
-Console.WriteLine();
+//foreach (int item in nums)
+//{
+//    Console.Write($"{item} \t");
+//}
+//Console.WriteLine();
 
-Array.Reverse(nums);
+//Array.Reverse(nums);
 
-foreach (int item in nums)
-{
-    Console.Write($"{item} \t");
-}
+//foreach (int item in nums)
+//{
+//    Console.Write($"{item} \t");
+//}
