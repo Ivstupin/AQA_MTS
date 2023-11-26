@@ -15,8 +15,8 @@ namespace Arrays // Note: actual namespace depends on the project name.
             {
                 Console.Clear();
 
-                int[] array = { 1, 2, 5, 3, 4, 5, 3 }; //создаём массив
-                Console.WriteLine("Введите целое число для его удаления из массива [1, 2, 5, 3, 4, 5, 3]: \n");
+                int[] array = { 1, 2, 5, 3, 4, 5, 3, 5 }; //создаём массив
+                Console.WriteLine("Введите целое число для его удаления из массива [1, 2, 5, 3, 4, 5, 3, 5]: \n");
                 int usersNumbersToDelete = Convert.ToInt32(Console.ReadLine());
 
                 int indexUsersNumbersToDelete = 0;  // переменная для хранения индекса в массиве введённого числа
@@ -27,7 +27,6 @@ namespace Arrays // Note: actual namespace depends on the project name.
                 {
                     if (array[i] == usersNumbersToDelete)
                     {
-
                         countNotDistinctNumbersInArrays++;
                     }
                     else
@@ -39,25 +38,18 @@ namespace Arrays // Note: actual namespace depends on the project name.
                 {
                     Console.WriteLine ($"Число {usersNumbersToDelete} отсутствует в массиве");
                 }
-                while (countNotDistinctNumbersInArrays >= 1) //цикл для обработки посторяющихся значений в массиве
+                while (countNotDistinctNumbersInArrays >=1) //цикл для обработки повторяющихся значений в массиве
                 {
-                    int[] newArray = new int[array.GetLength(0) - 1]; //новый массив
-                    //countUsersNumbersNotIn = 0;
+                    int[] newArray = new int[array.GetLength(0) - 1]; //новый массив с уменьшением размера на 1 в каждой итерации цикла
+                    
                     for (int i = 0; i < array.GetLength(0); i++) //цикл для поиска индекса
                     {
                         if (array[i] == usersNumbersToDelete)
                         {
                             indexUsersNumbersToDelete = i;
-
                         }
                     }
-
-                    if (countUsersNumbersNotIn == array.GetLength(0))
-                    {
-                        //Console.WriteLine($"Число {usersNumbersToDelete} отсутствует в массиве");
-                        break;
-                    }
-
+                    
                     for (int i = 0; i < indexUsersNumbersToDelete; i++) // цикл 1,вносим значения в новый массив до введённного символа
                     {
                         newArray[i] = array[i];
@@ -68,7 +60,7 @@ namespace Arrays // Note: actual namespace depends on the project name.
                         newArray[i - 1] = array[i];
                     }
 
-                    countNotDistinctNumbersInArrays = countNotDistinctNumbersInArrays--;
+                    countNotDistinctNumbersInArrays -= 1; // уменьшаем счётчик повторяющихся символов в массиве
 
                     array = newArray;  // присваиваем в старый массив новый
                 }
