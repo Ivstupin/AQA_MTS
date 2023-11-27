@@ -1,5 +1,5 @@
 ﻿//Создайте массив целых чисел. Напишете программу, которая выводит сообщение о том, входит ли заданное число в массив или нет. Пусть число для поиска задается с консоли.
-namespace Arrays // Note: actual namespace depends on the project name.
+namespace Arrays1 // Note: actual namespace depends on the project name.
 {
     static class Program1
     {
