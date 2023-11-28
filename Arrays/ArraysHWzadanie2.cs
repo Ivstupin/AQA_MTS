@@ -66,8 +66,8 @@ namespace Arrays2
 
                     array = newArray;  // присваиваем в старый массив новый
                 }
-                                       
-                    for (int i = 0; i < array.GetLength(0); i++) // цикл для вывода массива на консоль
+                Console.WriteLine("Вывод массива:");
+                for (int i = 0; i < array.GetLength(0); i++) // цикл для вывода массива на консоль
                 {
                     Console.WriteLine(array[i]);
                 }
