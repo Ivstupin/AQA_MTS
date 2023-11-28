@@ -6,7 +6,7 @@
 
 
 using System;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace Arrays4 // Note: actual namespace depends on the project name.
 {
