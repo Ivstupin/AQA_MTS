@@ -3,9 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace StringApp
 {
-    static class Program
+    static class Program0
     {
-        static void Main(string[] args)
+        static void Main0(string[] args)
         {
             // Declare without initializing.
             string message1;
