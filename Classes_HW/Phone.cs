@@ -27,18 +27,18 @@ namespace Classes_HW1
         }
         public void receiveCall(string name)
         {
-            Console.WriteLine($"Звонит {name}"); 
+            Console.WriteLine($"Звонит {name}");
         }
         public long getNumber()
-        { 
+        {
             return number;
         }
-        public void sendMessage(params long[] parameters) 
+        public void sendMessage(params long[] parameters)
         {
-            
-            for (int i = 0; i < parameters.Length; i++) 
+
+            for (int i = 0; i < parameters.Length; i++)
             {
-               Console.WriteLine(parameters[i]);
+                Console.WriteLine(parameters[i]);
             }
         }
         public void Print()
@@ -48,6 +48,3 @@ namespace Classes_HW1
         }
     }
 }
-
-    
-

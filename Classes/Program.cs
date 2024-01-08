@@ -171,65 +171,65 @@ namespace Classes
     */
             // -=================== Классы ===================-
             // -=================== Структура класса
-            /*
-                        EmptyClass emptyClass = new EmptyClass();
+/*
+            EmptyClass emptyClass = new EmptyClass();
 
-                        Person personObj1 = new Person();
-                        Person personObj2 = new Person();
+            Person personObj1 = new Person();
+            Person personObj2 = new Person();
 
-                        Console.WriteLine(personObj1.Equals(personObj2));
+            Console.WriteLine(personObj1.Equals(personObj2));
 
-                        personObj1.Print();
+            personObj1.Print();
 
-                        personObj1.name = "Alex";
-                        personObj1.age = 45;
-                        personObj1.Print();
-                        personObj2.Print();
+            personObj1.name = "Alex";
+            personObj1.age = 45;
+            personObj1.Print();
+            personObj2.Print();
 
-                        // -=================== Создание конструкторов
-                        PersonWithConstructor personWithConstructor = new PersonWithConstructor();
-                        personWithConstructor.Print();
+            // -=================== Создание конструкторов
+            PersonWithConstructor personWithConstructor = new PersonWithConstructor();
+            personWithConstructor.Print();
 
-                        ConstructorCustom constructorCustom1 = new ConstructorCustom(10);
-                        Console.WriteLine(constructorCustom1.GetHashCode());
-                        ConstructorCustom constructorCustom2 = new ConstructorCustom("text");
+            ConstructorCustom constructorCustom1 = new ConstructorCustom(10);
+            Console.WriteLine(constructorCustom1.GetHashCode());
+            ConstructorCustom constructorCustom2 = new ConstructorCustom("text");
 
-                        constructorCustom1 = new ConstructorCustom(20);
-                        Console.WriteLine(constructorCustom1.GetHashCode());
+            constructorCustom1 = new ConstructorCustom(20);
+            Console.WriteLine(constructorCustom1.GetHashCode());
 
-                        ConstructorByDefault constructorByDefault = new ConstructorByDefault();
+            ConstructorByDefault constructorByDefault = new ConstructorByDefault();
 
-                        ConstructorFull constructorFull1 = new ConstructorFull();
-                        ConstructorFull constructorFull2 = new ConstructorFull(1);
-                        ConstructorFull constructorFull3 = new ConstructorFull("test");
+            ConstructorFull constructorFull1 = new ConstructorFull();
+            ConstructorFull constructorFull2 = new ConstructorFull(1);
+            ConstructorFull constructorFull3 = new ConstructorFull("test");
 
-                        // -=================== Цепочка вызова конструкторов
-                        PersonChain personChain1 = new PersonChain();
-                        PersonChain personChain2 = new PersonChain("Alex");
-                        PersonChain personChain3 = new PersonChain("Alex", 45);
+            // -=================== Цепочка вызова конструкторов
+            PersonChain personChain1 = new PersonChain();
+            PersonChain personChain2 = new PersonChain("Alex");
+            PersonChain personChain3 = new PersonChain("Alex", 45);
 
-                        personChain1.Print();
-                        personChain2.Print();
-                        personChain3.Print();
+            personChain1.Print();
+            personChain2.Print();
+            personChain3.Print();
 
-                        // -=================== Первичные конструкторы
-                        PersonPrimaryConstructors personPrimaryConstructors4 = new PersonPrimaryConstructors(name: "Alex", age: 23);
-                        //PersonPrimaryConstructors personPrimaryConstructors1 = new PersonPrimaryConstructors();          - Ошибка
-                        PersonPrimaryConstructors personPrimaryConstructors2 = new PersonPrimaryConstructors(name: "Alex");
-                        //PersonPrimaryConstructors personPrimaryConstructors3 = new PersonPrimaryConstructors(age: 45);   - Ошибка
+            // -=================== Первичные конструкторы
+            PersonPrimaryConstructors personPrimaryConstructors4 = new PersonPrimaryConstructors(name: "Alex", age: 23);
+            //PersonPrimaryConstructors personPrimaryConstructors1 = new PersonPrimaryConstructors();          - Ошибка
+            PersonPrimaryConstructors personPrimaryConstructors2 = new PersonPrimaryConstructors(name: "Alex");
+            //PersonPrimaryConstructors personPrimaryConstructors3 = new PersonPrimaryConstructors(age: 45);   - Ошибка
 
-                        personPrimaryConstructors2.Print();
-                        personPrimaryConstructors4.Print();
+            personPrimaryConstructors2.Print();
+            personPrimaryConstructors4.Print();
 
-                        // -=================== This
-                        PersonThis personThis = new PersonThis("Alex", 45);
+            // -=================== This
+            PersonThis personThis = new PersonThis("Alex", 45);
 
-                        NamespaceA.NamespaceC.ClassA classA = new NamespaceA.NamespaceC.ClassA();
-                        classA.Print();
+            NamespaceA.NamespaceC.ClassA classA = new NamespaceA.NamespaceC.ClassA();
+            classA.Print();
 
-                        NamespaceB.ClassA classAB = new NamespaceB.ClassA();
-                        classAB.Print();
-                        */
+            NamespaceB.ClassA classAB = new NamespaceB.ClassA();
+            classAB.Print();
+            */
 
             // -=================== Практика ===================-
             // -=================== Задача 1
@@ -244,37 +244,37 @@ namespace Classes
             }
 
             Console.WriteLine($"Students.Length: {students.Length}");
-
+            
             foreach (var student in students)
             {
                 Console.Write($"Name: {student.name}, Group: {student.group}, Mark: {student.diplomMark}");
                 Console.WriteLine();
             }
             Console.WriteLine();
-
+            
             // -=================== Задача 2
             foreach (Student student in students)
             {
                 if (student.diplomMark == 9 || student.diplomMark == 10)
                 {
-                    student.Print();
-                }
+                    student.Print();                    
+                } 
             }
             Console.WriteLine();
-
+            
             // -=================== Задача 3
             Student[] students1 = new Student[14];
-
+            
             for (int i = 0; i < 14; i++) students1[i] = new Student("Alex" + i);
             foreach (var student in students1) student.Print();
             Console.WriteLine();
-
+            
             // -=================== Задача 4
             Cat cat = new Cat();
             cat.name = "Barsik";
             cat.age = 2;
             cat.maxFoodCount = 3;
-
+            
             Console.WriteLine($"Наелся? - {cat.Feed(2)}");
             Console.WriteLine($"Наелся? - {cat.Feed(4)}");
             Console.WriteLine("Наелся? - {0}", cat.Feed(3) ? "Да" : "Нет");
