@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract_HW", "Abstract_HW\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract_HW2", "Abstract_HW2\Abstract_HW2.csproj", "{917B943A-3D49-438E-BADC-CA80246277D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitProject", "NUnitProject\NUnitProject.csproj", "{9CE67F41-9E27-4179-9E53-73C34703870F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitProject", "NUnitProject\NUnitProject.csproj", "{9CE67F41-9E27-4179-9E53-73C34703870F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{6A3BC6AC-6272-44AA-8AAD-C26A18820E57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{9CE67F41-9E27-4179-9E53-73C34703870F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE67F41-9E27-4179-9E53-73C34703870F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE67F41-9E27-4179-9E53-73C34703870F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3BC6AC-6272-44AA-8AAD-C26A18820E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3BC6AC-6272-44AA-8AAD-C26A18820E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3BC6AC-6272-44AA-8AAD-C26A18820E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3BC6AC-6272-44AA-8AAD-C26A18820E57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
