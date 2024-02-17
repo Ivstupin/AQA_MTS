@@ -46,7 +46,8 @@ namespace Exceptions_HW
                     {
                         throw new WrongPasswordException("password не должен содержать пробелы");
                     }
-                    else if (Password.Contains
+                    else if (Password.Equals(list))
+                    { 
                         throw new WrongPasswordException("password должен содержать хотя бы одну цифру");
                     }
                     else if (!Password.Equals(ConfirmPassword))
