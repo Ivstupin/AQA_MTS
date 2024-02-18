@@ -4,35 +4,26 @@
     {
         static void Main(string[] args)
         {
-            bool[] test =
-        {
-            // негативные проверки логина
-           
-            Except.Authorization("alex ", "123", "123"),
-            Except.Authorization("1234567891011121314151617181920", "123", "123"),
+            while (true)
 
-            // негативные проверки пароля
-            Except.Authorization("alex", "", "123"),
-            Except.Authorization("alex", "123 ", "123"),
-            Except.Authorization("alex", "alex", "123"),
-            Except.Authorization("alex", "124", "123"),
-
-            // позитивная проверка
-            Except.Authorization("alex", "123", "123")
-        };
-
-            for (int i = 0; i < test.Length; i++)
             {
-                Console.Write($"Тест {i}: ");
-                if (!test[i])
-                {
-                    Console.WriteLine("Данные не приняты");
-                }
-                else
-                {
-                    Console.WriteLine("Данные приняты");
-                };
-            }
+                Console.Clear();
+                Console.WriteLine("Введите логин длиной до 20 символов и без пробелов:");
+                string login = Console.ReadLine();
+                Console.WriteLine("Введите пароль длиной до 20 символов, без пробелов и хотя бы с одной цифрой:");
+                string password = Console.ReadLine();
+                Console.WriteLine("Введите повторно пароль для его подтверждения:");
+                string confirmPassword = Console.ReadLine();
+                
+                bool[] test =
+                    {
+                Except.Authorization(login, password, confirmPassword)
+            };
+                if (test.Contains(true))
+                Console.WriteLine("Вы авторизованы!");
+                Console.ReadLine();
+            } 
+
         }
     }
     

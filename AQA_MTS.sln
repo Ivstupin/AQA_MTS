@@ -47,9 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections_HW", "Collections_HW\Collections_HW.csproj", "{6468419A-9774-4C33-B80A-7292A13DD01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_HW2", "Collections_HW2\Collections_HW2.csproj", "{6CA6AD0D-FA44-417A-BD39-F02534E428A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections_HW2", "Collections_HW2\Collections_HW2.csproj", "{6CA6AD0D-FA44-417A-BD39-F02534E428A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_HW3", "Collections_HW3\Collections_HW3.csproj", "{4E6B2CFF-1905-4D7C-94B7-07A45F749BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections_HW3", "Collections_HW3\Collections_HW3.csproj", "{4E6B2CFF-1905-4D7C-94B7-07A45F749BBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

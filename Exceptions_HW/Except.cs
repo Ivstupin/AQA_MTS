@@ -21,38 +21,37 @@ namespace Exceptions_HW
             Login = login;
             Password = password;
             ConfirmPassword = confirmPassword;
-
+            
             try 
             {
                 if (Login.Length >= 20)
 
                 {
-                    throw new WrongLoginException("Длина login должна быть меньше 20");
+                    throw new WrongLoginException("Длина логина должна быть меньше 20 символов, нажмите ENTER");
                 }
                 else if (Login.Contains(' '))
                 {
-                    throw new WrongLoginException("login не должен содержать пробелы");
+                    throw new WrongLoginException("Логин не должен содержать пробелы, нажмите ENTER");
                 }
 
 
                 else
                 {
-                    List<char> list = new List<char>() { '0', '1', '2' };
                     if (Password.Length >= 20)
                     {
-                        throw new WrongPasswordException("Длина password должна быть меньше 20 символов");
+                        throw new WrongPasswordException("Длина пароля должна быть меньше 20 символов, нажмите ENTER");
                     }
                     else if (Password.Contains(' '))
                     {
-                        throw new WrongPasswordException("password не должен содержать пробелы");
+                        throw new WrongPasswordException("Пароль не должен содержать пробелы, нажмите ENTER");
                     }
-                    else if (Password.Equals(list))
+                    else if (!Password.Any(char.IsDigit))
                     { 
-                        throw new WrongPasswordException("password должен содержать хотя бы одну цифру");
+                        throw new WrongPasswordException("Пароль должен содержать хотя бы одну цифру, нажмите ENTER");
                     }
                     else if (!Password.Equals(ConfirmPassword))
                     {
-                        throw new WrongPasswordException("password и confirmPassword должны быть равны");
+                        throw new WrongPasswordException("Пароль и подтверждение пароля должны быть одинаковыми, нажмите ENTER");
                     }
                     return true;
                 }
@@ -63,6 +62,7 @@ namespace Exceptions_HW
                 Console.WriteLine(exception.Message);
                 return false;
             }
+            
         }
     }
     
