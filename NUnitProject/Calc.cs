@@ -9,10 +9,11 @@ namespace NUnitProject
     public static class Calc
 
     {
-        public static int (int x, int y) 
-            { 
-            return sum = x + y;
-}
-    }
+        public static int Sum(int x, int y)
+        {
+            return  x + y;
+        }
 
+    }
+   
 }

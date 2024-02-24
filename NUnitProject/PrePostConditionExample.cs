@@ -28,11 +28,7 @@ public class PrePostConditionExample
         Console.WriteLine($"{this}: Test2... {++i}");
     }
 
-    [Test]
-    public void Test11()
-    {
-        Console.WriteLine($"{this}: Test2... {++i}");
-    }
+   
 
     [TearDown]
     public void TearDown()

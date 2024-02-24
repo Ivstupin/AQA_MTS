@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace NUnitProject
 {
+    [TestFixture, Category("Regression")]
     public class AttributesExample
     {
         private int x;
         private int y;
-        private int i;
+        private int i = 0;
 
         [Test(Description = "Test for Math Operation")]
         public void Demotest()
@@ -47,6 +48,7 @@ namespace NUnitProject
 
         [Test, Order(2)]
         //[Author("Jane Doe, "jane.doe@example.com")]
+        //[Author("Another Developer, "email@example.com")]
         public void AuthorTest()
         {
             Console.WriteLine($"{this}: AuthorTest...{x++}");
@@ -61,11 +63,11 @@ namespace NUnitProject
         }
 
         [Test]
-        [Repeat(3)]
+        [Retry(3)]
         public void RetryTest()
         {
             Console.WriteLine($"{this}: RetryTest...{++i}");
-            if (i == 4) Assert.Pass();
+            if (i == 3) Assert.Pass();
             else Assert.Fail();
         }
 
@@ -82,34 +84,34 @@ namespace NUnitProject
         }
 
         [Test]
-        public void RangeValueTest([Random(1, 10, 5)]int rangeNumber)
+        public void RangeValueTest([Range(1, 5, 2)]int rangeNumber)
         {
             Console.WriteLine($"{this}: RandomValuesTest...{rangeNumber}{x++}");
         }
 
         [Test]
-        public void ValueTest([Values(1, 5, 2)] int valuesNumber)
+        public void ValuesTest([Values(1, 5, 2)] int valuesNumber)
         {
             Console.WriteLine($"{this}: RandomValuesTest...{valuesNumber}{x++}");
         }
 
     [Test]
-    public void AllValueTest(
+    public void AllValuesTest(
         [Random(1, 10, 5)] int randomNumber,
         [Random(1, 10, 5)] int rangeNumber,
         [Values(1, 5, 2)] int valuesNumber)
     {
-        Console.WriteLine($"{this}: RandomValuesTest...{randomNumber}{x++}");
-            Console.WriteLine($"{this}: RandomValuesTest...{rangeNumber}{x++}");
-            Console.WriteLine($"{this}: RandomValuesTest...{valuesNumber}{x++}");
+        Console.WriteLine($"{this}: AllValuesTest...{randomNumber}{x++}");
+            Console.WriteLine($"{this}: AllValuesTest...{rangeNumber}{x++}");
+            Console.WriteLine($"{this}: AllValuesTest...{valuesNumber}{x++}");
         }
 
-        [Test, Combinatorial]
+        [Test, Combinatorial] 
         public void CombinatorialTest(
-        [Values(1, 10, 5)] int randomNumber,
+        [Values(1, 10, 5)] int number,
         [Values("A","B")] string  text)
         {
-            Console.WriteLine($"{text} {1} {2}");
+            Console.WriteLine($"{this}: Xtest... {number} {text}");
         }
 
         [Test, Pairwise]
@@ -131,7 +133,7 @@ namespace NUnitProject
 
         [Test]
         [Severity(SeverityLevel.Minor)]
-        public void AdvancePropertyTest()
+        public void AdvancedPropertyTest()
         {
             Console.WriteLine($"{this}: PropertyTest...{TestContext.CurrentContext.Test.Properties.Get("Severity")}");
         }

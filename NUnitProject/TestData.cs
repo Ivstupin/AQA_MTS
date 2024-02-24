@@ -10,9 +10,9 @@ namespace NUnitProject
     {
         public static object[] DivideCases =
            {
-            new object[] {12,3,4} ,
-            new object[] {12,2,6},
-            new object[] {12,4,3}
+            new object[] {23,3,7} ,
+            new object[] {24,2,12},
+            new object[] {24,4,7}
         };
     }
 }
