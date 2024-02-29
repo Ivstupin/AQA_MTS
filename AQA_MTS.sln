@@ -57,7 +57,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generics_HW", "Generics_HW\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generics_HW2", "Generics_HW2\Generics_HW2.csproj", "{D592776C-AD5E-44CA-BC78-74E4CB6583EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit_HW", "NUnit_HW\NUnit_HW.csproj", "{F25384D3-1E09-4F7B-8FF0-B4A9F9213D36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnit_HW", "NUnit_HW\NUnit_HW.csproj", "{F25384D3-1E09-4F7B-8FF0-B4A9F9213D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumBasic", "SeleniumBasic\SeleniumBasic.csproj", "{F6E2B83E-713B-4BBC-8706-B15E7B6D543E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +179,10 @@ Global
 		{F25384D3-1E09-4F7B-8FF0-B4A9F9213D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25384D3-1E09-4F7B-8FF0-B4A9F9213D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25384D3-1E09-4F7B-8FF0-B4A9F9213D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E2B83E-713B-4BBC-8706-B15E7B6D543E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E2B83E-713B-4BBC-8706-B15E7B6D543E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E2B83E-713B-4BBC-8706-B15E7B6D543E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E2B83E-713B-4BBC-8706-B15E7B6D543E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
