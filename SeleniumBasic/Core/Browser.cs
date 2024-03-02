@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumBasic.Helpers.Configuration;
 using SeleniumBasic.Utilites.Configuration;
 
 namespace SeleniumBasic.Core
@@ -18,9 +19,7 @@ namespace SeleniumBasic.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(180);
-            //Driver!.Manage().Timeouts().PageLoad.Add(System.TimeSpan.FromMinutes(10));
-            
+            //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }
