@@ -18,7 +18,9 @@ namespace SeleniumBasic.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(180);
+            //Driver!.Manage().Timeouts().PageLoad.Add(System.TimeSpan.FromMinutes(10));
+            
         }
     }
 }
