@@ -4,6 +4,7 @@ using OpenQA.Selenium.Firefox;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using LogLevel = OpenQA.Selenium.LogLevel;
+using System.Reflection;
 
 namespace SeleniumBasic.Core;
 
@@ -15,8 +16,12 @@ public class DriverFactory
         chromeOptions.AddArguments("--incognito");
         chromeOptions.AddArguments("--disable-gpu");
         chromeOptions.AddArguments("--disable-extensions");
-        //chromeOptions.AddArguments("--headless");
+        chromeOptions.AddArguments("--headless");
 
+        string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        string pathForDownloadsByDefault = Path.Combine(assemblyPath, "Downloads");
+        chromeOptions.AddUserProfilePreference("download.default_directory", pathForDownloadsByDefault);// включение опции - папка для скачивания по-умолчанию
+        
         chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
