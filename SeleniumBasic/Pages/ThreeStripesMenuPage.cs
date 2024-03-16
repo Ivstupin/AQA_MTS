@@ -2,15 +2,15 @@
 
 namespace SeleniumBasic.Pages;
 
-public class MenuPage : BasePage
+public class ThreeStripesMenuPage : BasePage
 {
     private static string END_POINT = "";
 
     // Описание элементов
-    private static readonly By WorkingOnMenuBy = By.Id("inProgressLink");
+    private static readonly By ThreeStripesBy = By.Id("react-burger-menu-btn");
 
 
-    public MenuPage(IWebDriver driver) : base(driver)
+    public ThreeStripesMenuPage(IWebDriver driver) : base(driver)
     {
     }
 
@@ -21,9 +21,9 @@ public class MenuPage : BasePage
 
     public override bool IsPageOpened()
     {
-        return WorkingOnMenu.Displayed;
+        return ThreeStripes.Displayed;
     }
 
     // Методы
-    public IWebElement WorkingOnMenu => WaitsHelper.WaitForExists(WorkingOnMenuBy);
+    public IWebElement ThreeStripes => WaitsHelper.WaitForExists(ThreeStripesBy);
 }

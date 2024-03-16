@@ -1,31 +1,114 @@
-﻿ using NUnitTest.Pages;
-using SeleniumBasic.Helpers.Configuration;
-using SeleniumBasic.Pages;
+﻿using SeleniumBasic.Pages;
 
 namespace SeleniumBasic.Tests;
 
 public class LoginTest : BaseTest
 {
     [Test]
-    public void SuccessfulLoginTest()
+    public void SuccessfulLoginTestByStandard_User()
     {
         // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-        DashboardPage dashboardPage = new DashboardPage(Driver);
+        loginPage.LoginByStandard_User("", "");
+        ProductsPage productsPage = new ProductsPage(Driver);
 
         // Проверка 
-        Assert.That(dashboardPage.IsPageOpened);
+        Assert.That(productsPage.IsPageOpened);
+        //Thread.Sleep(10000);
     }
 
     [Test]
-    public void InvalidUsernameLoginTest()
+    public void LoginByProblem_UserLoginTest()
     {
-        // Проверка
-        Assert.That(
-            new LoginPage(Driver)
-                .IncorrectLogin("ssdd", "")
-                .ErrorLabel.Text.Trim(),
-            Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
+        // Простой вид
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.LoginByProblem_user("", "");
+        ProductsPage productsPage = new ProductsPage(Driver);
+
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
+        //Thread.Sleep(10000);
     }
+
+    [Test]
+    public void LoginByPerformance_Glitch_User_LoginTest()
+    {
+        // Простой вид
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.LoginByPerformance_Glitch_User("", "");
+        ProductsPage productsPage = new ProductsPage(Driver);
+
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
+        
+    }
+
+    [Test]
+    public void LoginByError_User_LoginTest()
+    {
+        // Простой вид
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.LoginByError_User("", "");
+        ProductsPage productsPage = new ProductsPage(Driver);
+
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
+
+    }
+
+    [Test]
+    public void LoginByVisual_UserLoginTest()
+    {
+        // Простой вид
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.LoginByVisual_User("", "");
+        ProductsPage productsPage = new ProductsPage(Driver);
+
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
+
+    }
+
+    [Test]
+    public void InvalidUserNameAndPswLoginTest()
+    {
+        //// Проверка
+        Assert.That(
+           new LoginPage(Driver)
+              .LoginByInvalidUserNameAndPsw("", "")
+              .ErrorLab.Text.Trim(),
+            Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
+    }
+    
+    [Test]
+    public void LockedUserLoginTest()
+    {
+        //// Проверка
+        Assert.That(
+           new LoginPage(Driver)
+              .LoginByLockedUser("", "")
+              .ErrorLab.Text.Trim(),
+            Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
+    }
+
+    [Test]
+    public void EmptyUserNameLoginTest()
+    { 
+        Assert.That(
+           new LoginPage(Driver)
+              .LoginByEmptyUserName("", "")
+              .ErrorLab.Text.Trim(),
+            Is.EqualTo("Epic sadface: Username is required"));
+    }
+
+    [Test]
+    public void EmptyPswLoginTest()
+    {
+        Assert.That(
+           new LoginPage(Driver)
+              .LoginByEmptyPsw("", "")
+              .ErrorLab.Text.Trim(),
+            Is.EqualTo("Epic sadface: Password is required"));
+    }
+
 }
