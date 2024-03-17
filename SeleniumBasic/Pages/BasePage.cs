@@ -27,4 +27,5 @@ public abstract class BasePage
     {
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
     }
+   
 }

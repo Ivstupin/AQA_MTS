@@ -18,7 +18,7 @@ public class PaymentTest : BaseTest
 
         CartPage cartPage = new(Driver);                         // инициализация страницы корзины и переход на неё
         Assert.That(cartPage.IsPageOpened);                      // проверка что страница открылась
-        Assert.That(cartPage.СartIsNotEmpty);                    // проверка, что в тележке есть товар
+        Assert.That(!cartPage.СartIsEmpty());                    // проверка, что в тележке есть товар
         cartPage._CheckoutButtonClick();                         // нажатие на кнопку Checkout c переходом на страницу пользовательской информацией
 
         CheckoutUserInfoPage checkoutUserInfoPage = new(Driver); // инициализация страницы c пользовательской информацией
@@ -26,13 +26,15 @@ public class PaymentTest : BaseTest
         checkoutUserInfoPage.CorrectInputUsersInfo();            // заполнение страницы корректными данными и нажатие на кнопку Continue c переходом на страницу проверки заказа
 
         CheckoutOverviewPage checkoutOverviewPage = new(Driver); // инициализация страницы проверки заказа
-        Assert.That(checkoutOverviewPage.IsPageOpened());        // проверка что страница открылась
-        Assert.That(checkoutOverviewPage.IsTotalSumNotZero());   // проверка что общая сумма заказа не равна нулю
+        Assert.Multiple(() =>
+        {
+            Assert.That(checkoutOverviewPage.IsPageOpened());        // проверка что страница открылась
+            Assert.That(checkoutOverviewPage.IsTotalSumNotZero());   // проверка что общая сумма заказа не равна нулю
+        });
         checkoutOverviewPage._FinishButtonClick();               // нажатие на кнопку Finish c переходом на страницу c благодарностью за заказ
 
         CheckoutCompletePage checkoutCompletePage = new(Driver); // инициализация страницы c благодарностью за заказ
         Assert.That(checkoutCompletePage.IsPageOpened);          // проверка что страница открылась
-        
     }
 }
  

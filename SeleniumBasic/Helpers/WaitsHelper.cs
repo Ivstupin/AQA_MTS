@@ -26,7 +26,14 @@ public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
 
     public bool WaitForElementInvisible(By locator)
     {
-        return _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
+        try
+        {
+            return _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
+        }
+        catch (WebDriverTimeoutException)
+        {
+            throw new WebDriverTimeoutException("Элемент не стал невидимым в течение заданного времени");
+        }
     }
 
     public bool WaitForElementInvisible(IWebElement webElement)
@@ -39,6 +46,7 @@ public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
         catch (NoSuchElementException)
         {
             // Если элемент не найден, считаем его невидимым
+            
             return true;
         }
         catch (StaleElementReferenceException)

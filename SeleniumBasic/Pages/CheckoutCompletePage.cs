@@ -9,14 +9,15 @@ public class CheckoutCompletePage : BasePage
     // Описание элементов
     private static readonly By FinishButtonBy = By.Id("finish");
     private static readonly By TitleLabelBy = By.CssSelector("[class='title']");
+    private static readonly By ShoppingCartButtonBy = By.CssSelector("[class='shopping_cart_link']");
+    private static readonly By BackHomeButtonBy = By.CssSelector("[class='shopping_cart_link']");
 
     public ThreeStripesMenuPage ThreeStripesMenuPage;
     public CheckoutCompletePage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
     {
         ThreeStripesMenuPage = new ThreeStripesMenuPage(Driver); //три точки меню слева вверху
     }
-
-
+    
     protected override string GetEndpoint()
     {
         return END_POINT;
@@ -30,23 +31,18 @@ public class CheckoutCompletePage : BasePage
     // Атомарные Методы
     public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
     public IWebElement FinishButton => WaitsHelper.WaitForExists(FinishButtonBy);
-    //public IWebElement RemoveButton => WaitsHelper.WaitForExists(RemoveButtonBy);
-    //public IWebElement ShoppingCartAfterAddingProducts => WaitsHelper.WaitForExists(ShoppingCartAfterAddingProductsBy);
+    public IWebElement ShoppingCartButton => WaitsHelper.WaitForExists(ShoppingCartButtonBy);
+    public IWebElement BackHomeButton => WaitsHelper.WaitForExists(BackHomeButtonBy);
 
-    //public CartPage _CheckoutButtonClick()
-    //{
+    public ProductsPage _BackToProductsButtonCartClick()
+    {
+        ShoppingCartButton.Click();
+        return new ProductsPage(Driver);
+    }
 
-        //CheckoutButton.Click();
-
-       // return new CheckoutYourPaimentIdPage(Driver);
-   // }
-    //public CartPage RemoveButtonByStandard_User()
-    
-
-        // AddToCartButton.Click();
-
-        //return this;
-    //}
-
-
+    public ProductsPage _BackHomeButtonClick()
+    {
+        BackHomeButton.Click();
+        return new ProductsPage(Driver);
+    }
 }

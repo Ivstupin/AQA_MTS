@@ -7,72 +7,51 @@ public class LoginTest : BaseTest
     [Test]
     public void SuccessfulLoginTestByStandard_User()
     {
-        // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.LoginByStandard_User("", "");
         ProductsPage productsPage = new ProductsPage(Driver);
-
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
-        //Thread.Sleep(10000);
     }
 
     [Test]
     public void LoginByProblem_UserLoginTest()
     {
-        // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.LoginByProblem_user("", "");
         ProductsPage productsPage = new ProductsPage(Driver);
-
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
-        //Thread.Sleep(10000);
     }
 
     [Test]
     public void LoginByPerformance_Glitch_User_LoginTest()
     {
-        // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.LoginByPerformance_Glitch_User("", "");
         ProductsPage productsPage = new ProductsPage(Driver);
-
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
-        
     }
 
     [Test]
     public void LoginByError_User_LoginTest()
     {
-        // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.LoginByError_User("", "");
         ProductsPage productsPage = new ProductsPage(Driver);
-
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
-
     }
 
     [Test]
     public void LoginByVisual_UserLoginTest()
     {
-        // Простой вид
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.LoginByVisual_User("", "");
         ProductsPage productsPage = new ProductsPage(Driver);
-
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
-
     }
 
     [Test]
     public void InvalidUserNameAndPswLoginTest()
     {
-        //// Проверка
         Assert.That(
            new LoginPage(Driver)
               .LoginByInvalidUserNameAndPsw("", "")
@@ -83,7 +62,6 @@ public class LoginTest : BaseTest
     [Test]
     public void LockedUserLoginTest()
     {
-        //// Проверка
         Assert.That(
            new LoginPage(Driver)
               .LoginByLockedUser("", "")
