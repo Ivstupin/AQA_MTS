@@ -6,8 +6,8 @@ using PageObjectSteps.Steps;
 
 namespace PageObjectSteps.Tests;
 
-//[Parallelizable(scope: ParallelScope.All)]
-//[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+[Parallelizable(scope: ParallelScope.All)]
+[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
