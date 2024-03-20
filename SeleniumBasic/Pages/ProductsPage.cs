@@ -62,5 +62,4 @@ public class ProductsPage : BasePage
         NameProductsTitle.Click();
         return new ProductInfoPage(Driver);
     }
-
 }

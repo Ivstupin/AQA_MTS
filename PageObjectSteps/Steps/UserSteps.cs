@@ -13,8 +13,6 @@ public class UserSteps : BaseSteps
         _loginPage = new LoginPage(Driver);
         _productsPage = new ProductsPage(Driver);
     }
-
-    // Комплексные
     public ProductsPage LoginByStandard_User()
     {
         _loginPage.UserNameInput.SendKeys(standard_User);

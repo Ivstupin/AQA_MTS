@@ -14,7 +14,6 @@ public class ProductInfoPage : BasePage
     private static readonly By ShoppingCartButtonBy = By.CssSelector("[class='shopping_cart_link']"); // селектор ссылки на страницу с тележкой 
     private static readonly By ShoppingCartBadgeBy = By.CssSelector("[class='shopping_cart_badge']"); //бэйдж с количеством товаров в тележке
     
-
     public ThreeStripesMenuPage ThreeStripesMenuPage;
     public ProductInfoPage(IWebDriver driver, bool openPageByUrl = true) : base(driver, openPageByUrl)
     {
@@ -54,11 +53,10 @@ public class ProductInfoPage : BasePage
         ShoppingCartButton.Click();
         return new CartPage(Driver);
     }
-
+    
     public ProductsPage BackToProductsButtonCartClick()
     {
         BackToProductsButton.Click();
         return new ProductsPage(Driver);
     }
-
 }

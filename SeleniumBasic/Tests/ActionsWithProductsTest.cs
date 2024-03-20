@@ -8,7 +8,7 @@ public class ActionsWithProductsTest : BaseTest
     public void AddProductsToCart_ActionsWithProductsTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByStandard_User("", "");
+        loginPage.LoginByStandard_User();
         ProductsPage productsPage = new ProductsPage(Driver);
         productsPage._AddToCartButtonClick();                    // добавляем товар
         Assert.That(productsPage.RemoveButton.Displayed && productsPage.ShoppingCartBadge.Displayed); // кнопка добавить в тележку превратилась в удалить и в бэйдже тележки появилось количество товара
@@ -22,7 +22,7 @@ public class ActionsWithProductsTest : BaseTest
     public void DeleteProductsFromCart_ActionsWithProductsTest()
     {
         LoginPage loginPage = new(Driver);
-        loginPage.LoginByStandard_User("", "");
+        loginPage.LoginByStandard_User();
         ProductsPage productsPage = new(Driver);
         productsPage._AddToCartButtonClick();  // добавляем товар
         CartPage cartPage = new(Driver);

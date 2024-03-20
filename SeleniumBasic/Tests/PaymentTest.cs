@@ -11,7 +11,7 @@ public class PaymentTest : BaseTest
     public void Succesfull_EndToEnd_PaymentTest()
     {
         LoginPage loginPage = new(Driver);                       // инициализация страницы авторизации
-        loginPage.LoginByStandard_User("", "");                  // под стандартным пользователем
+        loginPage.LoginByStandard_User();                  // под стандартным пользователем
 
         ProductsPage productsPage = new ProductsPage(Driver)._AddToCartButtonClick();  // инициализация страницы с каталогом товаров и добавление товара в тележку
         Assert.That(productsPage.RemoveButton.Displayed && productsPage.ShoppingCartBadge.Displayed); // проверка, что кнопка добавить в тележку превратилась в удалить и в значке тележки справа появился товар

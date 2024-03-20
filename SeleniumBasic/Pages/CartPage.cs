@@ -19,7 +19,6 @@ public class CartPage : BasePage
     {
         ThreeStripesMenuPage = new ThreeStripesMenuPage(Driver); //три точки меню слева вверху
     }
-
     protected override string GetEndpoint()
     {
         return END_POINT;
@@ -75,5 +74,4 @@ public class CartPage : BasePage
         ContinueShopping.Click();
         return new ProductsPage(Driver);
     }
-
 }

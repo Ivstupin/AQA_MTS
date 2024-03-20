@@ -15,11 +15,7 @@ namespace PageObjectSteps.Pages
         private static readonly By PostalCodeInputBy = By.Id("postal-code");
         private static readonly By ShoppingCartButtonBy = By.CssSelector("[class='shopping_cart_link']");
         private static readonly By CancelButtonBy = By.Id("cancel");
-
-        //string validFirstName = "Ivan";
-        //string validtLastName = "Stupin";
-        //string validPostalCode = "630036";
-
+        
         public ThreeStripesMenuPage ThreeStripesMenuPage;
         public CheckoutUserInfoPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
         {
@@ -44,26 +40,5 @@ namespace PageObjectSteps.Pages
         public IWebElement ContinueButton => WaitsHelper.WaitForExists(ContinueButtonBy);
         public IWebElement ShoppingCartButton => WaitsHelper.WaitForExists(ShoppingCartButtonBy);
         public IWebElement CancelButton => WaitsHelper.WaitForExists(CancelButtonBy);
-
-        //public CheckoutOverviewPage CorrectInputUsersInfo()
-        //{
-        //    FirstNameInput.SendKeys(validFirstName);
-        //    LastNameInput.SendKeys(validtLastName);
-        //    PostalCodeInput.SendKeys(validPostalCode);
-        //    ContinueButton.Click();
-
-       
-        public ProductsPage BackToProductsButtonCartClick()
-        {
-            ShoppingCartButton.Click();
-            return new ProductsPage(Driver);
-        }
-
-        public CartPage _CancelButtonClick()
-        {
-            CancelButton.Click();
-            return new CartPage(Driver);
-        }
-
     }
 }

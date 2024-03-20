@@ -65,5 +65,4 @@ public class CheckoutUserInfoPage : BasePage
         CancelButton.Click();
         return new CartPage(Driver);
     }
-
 }

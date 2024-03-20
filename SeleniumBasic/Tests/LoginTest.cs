@@ -8,7 +8,7 @@ public class LoginTest : BaseTest
     public void SuccessfulLoginTestByStandard_User()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByStandard_User("", "");
+        loginPage.LoginByStandard_User();
         ProductsPage productsPage = new ProductsPage(Driver);
         Assert.That(productsPage.IsPageOpened);
     }
@@ -17,7 +17,7 @@ public class LoginTest : BaseTest
     public void LoginByProblem_UserLoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByProblem_user("", "");
+        loginPage.LoginByProblem_user();
         ProductsPage productsPage = new ProductsPage(Driver);
         Assert.That(productsPage.IsPageOpened);
     }
@@ -26,7 +26,7 @@ public class LoginTest : BaseTest
     public void LoginByPerformance_Glitch_User_LoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByPerformance_Glitch_User("", "");
+        loginPage.LoginByPerformance_Glitch_User();
         ProductsPage productsPage = new ProductsPage(Driver);
         Assert.That(productsPage.IsPageOpened);
     }
@@ -35,7 +35,7 @@ public class LoginTest : BaseTest
     public void LoginByError_User_LoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByError_User("", "");
+        loginPage.LoginByError_User();
         ProductsPage productsPage = new ProductsPage(Driver);
         Assert.That(productsPage.IsPageOpened);
     }
@@ -44,7 +44,7 @@ public class LoginTest : BaseTest
     public void LoginByVisual_UserLoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.LoginByVisual_User("", "");
+        loginPage.LoginByVisual_User();
         ProductsPage productsPage = new ProductsPage(Driver);
         Assert.That(productsPage.IsPageOpened);
     }
@@ -54,7 +54,7 @@ public class LoginTest : BaseTest
     {
         Assert.That(
            new LoginPage(Driver)
-              .LoginByInvalidUserNameAndPsw("", "")
+              .LoginByInvalidUserNameAndPsw()
               .ErrorLab.Text.Trim(),
             Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
     }
@@ -64,7 +64,7 @@ public class LoginTest : BaseTest
     {
         Assert.That(
            new LoginPage(Driver)
-              .LoginByLockedUser("", "")
+              .LoginByLockedUser()
               .ErrorLab.Text.Trim(),
             Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
     }
@@ -74,7 +74,7 @@ public class LoginTest : BaseTest
     { 
         Assert.That(
            new LoginPage(Driver)
-              .LoginByEmptyUserName("", "")
+              .LoginByEmptyUserName()
               .ErrorLab.Text.Trim(),
             Is.EqualTo("Epic sadface: Username is required"));
     }
@@ -84,9 +84,8 @@ public class LoginTest : BaseTest
     {
         Assert.That(
            new LoginPage(Driver)
-              .LoginByEmptyPsw("", "")
+              .LoginByEmptyPsw()
               .ErrorLab.Text.Trim(),
             Is.EqualTo("Epic sadface: Password is required"));
     }
-
 }

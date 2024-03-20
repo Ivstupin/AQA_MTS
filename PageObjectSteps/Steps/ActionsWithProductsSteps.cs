@@ -16,31 +16,22 @@ public class ActionsWithProductsSteps : BaseSteps
         cartPage = new CartPage(Driver);
     }
     /// <summary>
-    /// Добавляем товар со страницы ProductsPage
+    /// Добавляем товар в тележку со страниц ProductsPage, ProductInfoPage
     /// </summary>
     public ProductsPage _AddToCartButtonClick() //добавить в тележку
     {
         productsPage.AddToCartButton.Click();
         return productsPage;
     }
-    public ProductsPage _RemoveButtonClick() //удалить из тележки
+
+    /// <summary>
+    /// Удаляем товар из тележки со страниц ProductsPage, ProductInfoPage, CartPage (только если товар был добавлен ранее на других страницах)
+    /// </summary>
+    public ProductsPage _RemoveButtonClick() 
     {
         productsPage.RemoveButton.Click();
         return productsPage;
     }
-
-    //public CartPage ShoppingCartButtonLinkToCartPage() //кнопка с тележкой и ссылкой на страницу с тележкой
-    //{
-    //    ShoppingCartButton.Click();
-    //    return new CartPage(Driver);
-    //}
-
-    //public ProductInfoPage ShoppingCartButtonLinkToProductsInfoPage() //  кнопка с заголовком товара и переходом на страницу с информацией о товаре
-    //{
-    //    NameProductsTitle.Click();
-    //    return new ProductInfoPage(Driver);
-    //}
-
 }
 
 

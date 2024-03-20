@@ -59,5 +59,4 @@ public class CheckoutOverviewPage : BasePage
         CancelButton.Click();
         return new ProductsPage(Driver);
     }
-
 }

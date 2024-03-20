@@ -11,7 +11,7 @@ public class NavigationSteps : BaseSteps
     public CheckoutUserInfoPage checkoutUserInfoPage;
     public CheckoutOverviewPage checkoutOverviewPage;
     public CheckoutCompletePage checkoutCompletePage;
-
+    public ThreeStripesMenuPage threeStripesMenuPage;
     public NavigationSteps(IWebDriver driver) : base(driver)
     {
         productsPage = new ProductsPage(Driver);
@@ -20,6 +20,7 @@ public class NavigationSteps : BaseSteps
         checkoutUserInfoPage = new CheckoutUserInfoPage(Driver);
         checkoutOverviewPage = new CheckoutOverviewPage(Driver);
         checkoutCompletePage = new CheckoutCompletePage(Driver);
+        threeStripesMenuPage = new ThreeStripesMenuPage(Driver);
     }
 
     /// <summary>
@@ -30,6 +31,7 @@ public class NavigationSteps : BaseSteps
         сartPage.CheckoutButton.Click();
         return new CheckoutUserInfoPage(Driver);
     }
+
     /// <summary>
     /// Попадаем в тележку через клик по кнопке тележки со страниц: ProductsPage ProductInfoPage CheckoutUserInfoPage CheckoutOverviewPage CheckoutCompletePage
     /// </summary>
@@ -38,6 +40,7 @@ public class NavigationSteps : BaseSteps
         productsPage.ShoppingCartButton.Click();
         return new CartPage(Driver);
     }
+
     /// <summary>
     /// Попытка попасть на страницу CheckoutOverviewPage через клик по кнопке Continue без ввода валидных данных 
     /// </summary>
@@ -46,6 +49,7 @@ public class NavigationSteps : BaseSteps
         checkoutUserInfoPage.ContinueButton.Click();
         return checkoutUserInfoPage;
     }
+
     /// <summary>
     /// Попадаем на страницу CheckoutOverviewPage  через клик по кнопке Continue и ввод валидных данных
     /// </summary>
@@ -82,12 +86,47 @@ public class NavigationSteps : BaseSteps
     /// <summary>
     /// нажмём кнопку ContinueShopping и вернёмся в ProductsPage с CartPage
     /// </summary>
-    public ProductsPage NavigateToProductPageByClickContinueButton()
+    public ProductsPage FromCartPageToProductPageByClickContinueShoppingButton()
     {
         сartPage.ContinueShopping.Click();
         return new ProductsPage(Driver);
     }
 
+    /// <summary>
+    /// вернёмся по клику в ProductsPage с ProductInfoPage("Back to products" btn) и с CheckoutCompletePage("Finish" btn)
+    /// </summary>
+    public ProductsPage BackToProductsPageButtonClick()
+    {
+        productInfoPage.BackToProductsButton.Click();
+        return new ProductsPage(Driver);
+    }
+
+    /// <summary>
+    /// вернёмся по клику в CartPage с CheckoutUserInfoPage("Cancel" btn) 
+    /// </summary>
+    public CartPage BackToCartPageCancelBtnClick()
+    {
+        checkoutUserInfoPage.CancelButton.Click();
+        return new CartPage(Driver);
+    }
+
+    /// <summary>
+    /// вернёмся по клику в ProductsPage с CheckoutOverviewPage("Cancel" btn) 
+    /// </summary>
+    public ProductsPage BackToProductsPageCancelBtnClick()
+    {
+        checkoutOverviewPage.CancelButton.Click();
+        return new ProductsPage(Driver);
+    }
+
+    /// <summary>
+    /// вызовем контекстное меню настроек три линии по клику со всех страниц кроме логина 
+    /// </summary>
+    public ThreeStripesMenuPage ClickToThreeStripesMenuPage()
+    {
+        threeStripesMenuPage.ThreeStripes.Click();
+        return new ThreeStripesMenuPage(Driver);
+    }
 }
 
 

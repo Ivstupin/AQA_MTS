@@ -15,17 +15,13 @@ namespace PageObjectSteps.Pages
         private static readonly By ShoppingCartBadgeBy = By.CssSelector("[class='shopping_cart_badge']"); //бэйдж с количеством товаров в тележке
         private static readonly By DropdownNameBy = By.CssSelector("[class='product_sort_container']"); // dropdown Name (A to Z)
         private static readonly By NameProductsTitleBy = By.CssSelector("[class~='inventory_item_name']"); //селектор имени товара со ссылкой на страницу его описания
-        //private static readonly By RemoveButtonBy = By.CssSelector("[class='btn btn_secondary btn_small cart_button']");
-
+        
         public ThreeStripesMenuPage ThreeStripesMenuPage;
         public ProductsPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
         {
             ThreeStripesMenuPage = new ThreeStripesMenuPage(Driver); //три точки меню слева вверху
         }
-        //div[starts-with(@class, 'inventory')]name
-        //*[@id="inventory_item_container"]/div/div/div[2]/div[1]
-        //div[@id="inventory_item_container"]
-        //'inventory_details_name large_size'
+        
         protected override string GetEndpoint()
         {
             return END_POINT;
@@ -44,8 +40,6 @@ namespace PageObjectSteps.Pages
         public IWebElement ShoppingCartButton => WaitsHelper.WaitForExists(ShoppingCartButtonBy); //  кнопка со ссылкой на страницу с тележкой 
         public IWebElement NameProductsTitle => WaitsHelper.WaitForExists(NameProductsTitleBy); // заголовок товара
 
-        
-        
         public bool WaitForElementInvisibleRemoveButton => WaitsHelper.WaitForElementInvisible(RemoveButtonBy); //вернёт true если не найдёт selector кнопки Remove
 
         /// <summary>

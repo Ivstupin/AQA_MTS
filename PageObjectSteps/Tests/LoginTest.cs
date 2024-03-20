@@ -13,7 +13,6 @@ public class LoginTest : BaseTest
         ProductsPage productsPage = userSteps.LoginByStandard_User();
 
         Assert.That(productsPage.IsPageOpened);
-        //Thread.Sleep(50000);
     }
 
     [Test]

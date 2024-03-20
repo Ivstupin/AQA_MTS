@@ -28,7 +28,7 @@ namespace SeleniumBasic.Pages;
         {
         }
 
-        protected override string GetEndpoint()
+    protected override string GetEndpoint()
         {
             return END_POINT;
         }
@@ -45,7 +45,7 @@ namespace SeleniumBasic.Pages;
         public IWebElement ErrorLab => WaitsHelper.WaitForExists(ErrorBy);
     
         // Комплексные
-        public ProductsPage LoginByStandard_User(string username, string password)
+        public ProductsPage LoginByStandard_User()
         {
             UserNameInput.SendKeys(standard_User);
             PswInput.SendKeys(PswForAllUsers);
@@ -53,16 +53,15 @@ namespace SeleniumBasic.Pages;
             return new ProductsPage(Driver);
         }
 
-        public ProductsPage LoginByProblem_user(string username, string password)
+        public ProductsPage LoginByProblem_user()
         {
             UserNameInput.SendKeys(problem_User);
             PswInput.SendKeys(PswForAllUsers);
             LoginInButton.Click();
             return new ProductsPage(Driver);
         }
-
-
-        public ProductsPage LoginByPerformance_Glitch_User(string username, string password)
+    
+        public ProductsPage LoginByPerformance_Glitch_User()
         {
             UserNameInput.SendKeys(performance_Glitch_User);
             PswInput.SendKeys(PswForAllUsers);
@@ -70,14 +69,14 @@ namespace SeleniumBasic.Pages;
             return new ProductsPage(Driver);
         }
 
-        public ProductsPage LoginByError_User(string username, string password)
+        public ProductsPage LoginByError_User()
         {
             UserNameInput.SendKeys(error_User);
             PswInput.SendKeys(PswForAllUsers);
             LoginInButton.Click();
             return new ProductsPage(Driver);
         }
-        public ProductsPage LoginByVisual_User(string username, string password)
+        public ProductsPage LoginByVisual_User()
         {
             UserNameInput.SendKeys(visual_User);
             PswInput.SendKeys(PswForAllUsers);
@@ -85,28 +84,28 @@ namespace SeleniumBasic.Pages;
             return new ProductsPage(Driver);
         }
      
-        public LoginPage LoginByInvalidUserNameAndPsw(string username, string password)
+        public LoginPage LoginByInvalidUserNameAndPsw()
         {
             UserNameInput.SendKeys("gdf");
             PswInput.SendKeys("fghgf");
             LoginInButton.Click();
             return this;
         }
-        public LoginPage LoginByLockedUser(string username, string password)
+        public LoginPage LoginByLockedUser()
         {
             UserNameInput.SendKeys(locked_Out_User);
             PswInput.SendKeys(PswForAllUsers);
             LoginInButton.Click();
             return this;
         }
-        public LoginPage LoginByEmptyUserName(string username, string password)
+        public LoginPage LoginByEmptyUserName()
         {
             UserNameInput.SendKeys("");
             PswInput.SendKeys(PswForAllUsers);
             LoginInButton.Click();
             return this;
         }
-        public LoginPage LoginByEmptyPsw(string username, string password)
+        public LoginPage LoginByEmptyPsw()
         {
             UserNameInput.SendKeys("asd");
             PswInput.SendKeys("");

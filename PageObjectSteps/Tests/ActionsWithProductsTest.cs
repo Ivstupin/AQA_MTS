@@ -9,7 +9,7 @@ namespace PageObjectSteps.Tests;
 public class ActionsWithProductsTest : BaseTest
 {
     [Test]
-    public void DeleteProductsFromCart_ActionsWithProductsTest()
+    public void Add_Delete_ProductsFromCart_ActionsWithProductsTest()
     {
         new UserSteps(Driver).LoginByStandard_User(); // логин
 
@@ -26,12 +26,12 @@ public class ActionsWithProductsTest : BaseTest
         actionsWithProductsSteps._RemoveButtonClick(); // удаляем товар из тележки со страницы CartPage
         Assert.That(cartPage.СartIsEmpty()); // ОР тележка  пуста
 
-        navigationSteps.NavigateToProductPageByClickContinueButton(); // так как в тележке пусто и перейти по имени товара не получится, для проверки ProductInfoPage возвращаемся в ProductsPage 
+        navigationSteps.FromCartPageToProductPageByClickContinueShoppingButton(); // так как в тележке пусто и перейти по клику на именование товара не получится, для проверки ProductInfoPage возвращаемся в ProductsPage 
         navigationSteps.NavigateToProductInfoPage(); // переход в ProductInfoPage
         actionsWithProductsSteps._AddToCartButtonClick(); // добавляем товар в тележку со страницы ProductInfoPage
         Assert.That(!productsPage.ProductsNotChoosen());  // проверяем со страницы ProductInfoPage что товары  добавлены в тележку
         actionsWithProductsSteps._RemoveButtonClick(); // удаляем товар из тележки со страницы ProductInfoPage
-        Assert.That(productsPage.ProductsNotChoosen()); // проверяем со страницы ProductInfoPage что товары не  добавлены в тележку
+        Assert.That(productsPage.ProductsNotChoosen()); // проверяем со страницы ProductInfoPage что товары не добавлены в тележку
     }
 }
 
