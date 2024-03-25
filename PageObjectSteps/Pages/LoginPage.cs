@@ -1,19 +1,18 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Steps;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     public class LoginPage : BasePage
     {
         private static string END_POINT = "";
 
         // Описание элементов
-        private static readonly By LoginLogoBy = By.CssSelector("[class='login_logo']"); //лого Swag Labs
-        private static readonly By UserNameInputBy = By.Id("user-name"); // поле ввода username
-        private static readonly By PswInputBy = By.Id("password");       // поле ввода пароль
-        private static readonly By LoginInButtonBy = By.Id("login-button"); // кнопка логин 
-        private static readonly By ErrorBy = By.CssSelector("[data-test='error']");// поле для вывода ошибки
-        
+        private static readonly By EmailInputBy = By.Id("name");
+        private static readonly By PswInputBy = By.Id("password");
+        private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
+        private static readonly By LoginInButtonBy = By.Id("button_primary");
+        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
+
         // Инициализация класса
         public LoginPage(IWebDriver driver) : base(driver)
         {
@@ -26,13 +25,21 @@ namespace PageObjectSteps.Pages
 
         public override bool IsPageOpened()
         {
-            return LoginInButton.Displayed && UserNameInput.Displayed;
+            return LoginInButton.Displayed && EmailInput.Displayed;
         }
 
         // Методы
-        public IWebElement UserNameInput => WaitsHelper.WaitForExists(UserNameInputBy);
+        // Методы поиска элементов
+        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);
+        public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);
         public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
+        public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
-        public IWebElement ErrorLab => WaitsHelper.WaitForExists(ErrorBy);
+
+        // Методы действий с элементами
+        public void ClickLoginInButton() => LoginInButton.Click();
+
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }
