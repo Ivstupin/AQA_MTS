@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     public class CartPage : BasePage
     {

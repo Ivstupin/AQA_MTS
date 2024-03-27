@@ -1,21 +1,25 @@
-﻿using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Steps;
+﻿using Allure.Helpers.Configuration;
+using Allure.Net.Commons;
+using Allure.Pages;
+using Allure.Steps;
+using NUnit.Allure.Attributes;
 
-namespace PageObjectSteps.Tests;
+namespace Allure.Tests;
 
 
 
 public class ActionsWithProductsTest : BaseTest
 {
-    [Test]
+    [Test(Description = "Добавление и удаление продуктов из корзины")]
+    [AllureSeverity(SeverityLevel.critical)]
+    
     public void Add_Delete_ProductsFromCart_ActionsWithProductsTest()
     {
         new UserSteps(Driver).LoginByStandard_User(); // логин
 
         ActionsWithProductsSteps actionsWithProductsSteps = new(Driver);
         ProductsPage productsPage = actionsWithProductsSteps._AddToCartButtonClick(); // добавляем товар в тележку со страницы products 
-        Assert.That(!productsPage.ProductsNotChoosen()); // проверяем со страницы ProductsPage что товары  добавлены в тележку
+        Assert.That(productsPage.ProductsNotChoosen()); // проверяем со страницы ProductsPage что товары  добавлены в тележку
         actionsWithProductsSteps._RemoveButtonClick(); // удаляем товар из тележки со страницы ProductsPage
         Assert.That(productsPage.ProductsNotChoosen()); // проверяем со страницы ProductsPage что товары не добавлены в тележку
 

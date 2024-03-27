@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Pages;
+using Allure.Pages;
 
-namespace PageObjectSteps.Steps;
+namespace Allure.Steps;
 
 public class UserSteps : BaseSteps
 {
@@ -53,7 +53,7 @@ public class UserSteps : BaseSteps
         return new ProductsPage(Driver);
     }
 
-    public LoginPage LoginByInvalidUserNameAndPsw()
+    public LoginPage LoginByInvalidUserNameAndPsw(string f, string h)
     {
         _loginPage.UserNameInput.SendKeys("gdf");
         _loginPage.PswInput.SendKeys("fghgf");

@@ -1,8 +1,8 @@
-﻿using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Steps;
+﻿using Allure.Helpers.Configuration;
+using Allure.Pages;
+using Allure.Steps;
 
-namespace PageObjectSteps.Tests;
+namespace Allure.Tests;
 
 
 

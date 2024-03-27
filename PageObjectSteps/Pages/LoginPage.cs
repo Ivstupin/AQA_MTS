@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Steps;
+using Allure.Steps;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     public class LoginPage : BasePage
     {

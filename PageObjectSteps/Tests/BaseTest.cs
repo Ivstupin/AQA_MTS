@@ -1,19 +1,29 @@
-﻿using OpenQA.Selenium;
-using PageObjectSteps.Core;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Steps;
+﻿using NUnit.Allure.Core;
+using OpenQA.Selenium;
+using Allure.Core;
+using Allure.Helpers;
+using Allure.Helpers.Configuration;
+using Allure.Steps;
+using Allure.Net.Commons;
+using System.Text;
 
-namespace PageObjectSteps.Tests;
+namespace Allure.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+[AllureNUnit]
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
 
     protected UserSteps UserSteps;
+
+    [OneTimeSetUp]
+    public static void GlobalSetup()
+    {
+        AllureLifecycle.Instance.CleanupResultDirectory();
+    }
 
     [SetUp]
     public void FactoryDriverTest()
@@ -29,6 +39,23 @@ public class BaseTest
     [TearDown]
     public void TearDown()
     {
+        if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+        {
+            Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+            byte[] screenshotBytes = screenshot.AsByteArray;
+
+            //IWebElement test = Driver.FindElement(By.Id("sss"));
+            //Screenshot screenshotElement = ((ITakesScreenshot)test).GetScreenshot();
+
+            // Прикрепление скриншота к отчету
+            // Вариант 1
+            //AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);  устарел
+
+            // Вариант 2
+            AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
+        }
+
         Driver.Quit();
     }
 }

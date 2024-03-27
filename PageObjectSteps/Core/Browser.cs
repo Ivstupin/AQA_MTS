@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Helpers.Configuration;
+using Allure.Helpers.Configuration;
 
-namespace PageObjectSteps.Core
+namespace Allure.Core
 {
     public class Browser
     {

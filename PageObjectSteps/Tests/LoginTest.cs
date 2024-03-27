@@ -1,12 +1,14 @@
-﻿using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Steps;
-
-namespace PageObjectSteps.Tests;
+﻿using Allure.Helpers.Configuration;
+using Allure.Pages;
+using Allure.Steps;
+using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
+namespace Allure.Tests;
 
 public class LoginTest : BaseTest
 {
     [Test]
+    [NUnit.Allure.Attributes.AllureOwner("Ivan Stupin")]
     public void SuccessfulLoginTestByStandard_User()
     {
         UserSteps userSteps = new UserSteps(Driver);
@@ -16,6 +18,7 @@ public class LoginTest : BaseTest
     }
 
     [Test]
+    [AllureIssue("TMS-234234")]
     public void LoginByProblem_UserLoginTest()
     {
         UserSteps userSteps = new(Driver);
@@ -26,6 +29,7 @@ public class LoginTest : BaseTest
     }
 
     [Test]
+
     public void LoginByPerformance_Glitch_User_LoginTest()
     {
         UserSteps userSteps = new(Driver);
@@ -56,23 +60,25 @@ public class LoginTest : BaseTest
     }
 
     [Test]
+    [AllureStep("invalid")]
     public void InvalidUserNameAndPswLoginTest()
     {
         Assert.That(
              new UserSteps(Driver)
-              .LoginByInvalidUserNameAndPsw()
+              .LoginByInvalidUserNameAndPsw("f", "d")
               .ErrorLab.Text.Trim(),
             Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
     }
 
     [Test]
+    
     public void LockedUserLoginTest()
     {
         Assert.That(
              new UserSteps(Driver)
               .LoginByLockedUser()
               .ErrorLab.Text.Trim(),
-            Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
+            Is.EqualTo("Epic sadface: Sorry, this user has been locke5d out."));
     }
 
     [Test]
